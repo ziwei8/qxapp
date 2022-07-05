@@ -19,13 +19,13 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        // 延时操作，延时2秒，跳转到MainActivity
+        // 延时操作，延时2秒
         Timer timer = new Timer();
         timer.schedule(timetask, 5000);
 
         // 初始化Bmob
         // appkey: 是Bmob网站上，应用qxapp，里面的Application ID
-        Bmob.initialize(this, "9b6413e33eda93a2041ab3c34f64934e");
+        Bmob.initialize(this, "1d9612a274c26107376d8980fc858126");
     }
 
     TimerTask timetask = new TimerTask() {
@@ -37,9 +37,11 @@ public class SplashActivity extends AppCompatActivity {
             if (bmobUser!=null){
                 // 已登录
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                finish();
             }else {
                 // 未登录
                 startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                finish();
             }
         }
     };

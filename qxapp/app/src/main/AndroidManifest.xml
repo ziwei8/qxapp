@@ -22,12 +22,14 @@
         android:theme="@style/Theme.Qxapp"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".RegisterActivity"
             android:exported="false" />
-        <!-- 配置ContentProvider -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" /> <!-- 配置ContentProvider -->
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
-            android:authorities="cn.ziwei.qxapp.BmobContentProvider"></provider>
+            android:authorities="cn.ziwei.qxapp.BmobContentProvider" />
 
         <activity
             android:name=".SplashActivity"

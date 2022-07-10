@@ -43,4 +43,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.8.1'
     implementation 'com.squareup.okio:okio:2.2.2'
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    // 底部导航栏第三方库: 来源https://github.com/Ashok-Varma/BottomNavigation
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
 }

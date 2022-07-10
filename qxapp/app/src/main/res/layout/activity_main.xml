@@ -5,24 +5,16 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
-    <TextView
-        android:gravity="center"
-        android:text="主界面"
-        android:textSize="30sp"
+    <!-- viewPage-->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_weight="1"
+       android:layout_height="0dp"/>
 
-    <TextView
-        android:textSize="30sp"
-        android:id="@+id/username"
-        android:text="加载中..."
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:textSize="30sp"
-        android:id="@+id/nickname"
-        android:text="加载中..."
+    <!--底部导航栏(导入第三方库才能用)-->
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
+        android:id="@+id/bottomNavigationBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

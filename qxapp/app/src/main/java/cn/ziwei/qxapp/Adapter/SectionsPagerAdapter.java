@@ -12,7 +12,7 @@ import java.util.List;
  * @author ziwei
  * @version 1.0
  * @createTime 2022.07.10  16:00:00
- * @Description
+ * @Description Adapter是用于连接后端数据和前端显示的适配器接口,是数据data和UI（View）之间一个重要的纽带
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 

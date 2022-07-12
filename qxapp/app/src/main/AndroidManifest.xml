@@ -22,6 +22,9 @@
         android:theme="@style/Theme.Qxapp"
         tools:targetApi="31">
         <activity
+            android:name=".ReceiveActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity

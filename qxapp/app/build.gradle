@@ -46,4 +46,11 @@ dependencies {
 
     // 底部导航栏第三方库: 来源https://github.com/Ashok-Varma/BottomNavigation
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
+
+    // 各种视觉、动作和互动设计，UI设计
+    implementation 'com.google.android.material:material:1.6.1'
+    // 灵活地显示列表数据
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    // 下拉刷新控件
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 }

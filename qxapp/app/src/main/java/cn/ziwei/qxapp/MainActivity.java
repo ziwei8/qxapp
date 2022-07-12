@@ -6,8 +6,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -15,16 +13,17 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.QueryListener;
 import cn.ziwei.qxapp.Adapter.SectionsPagerAdapter;
-import cn.ziwei.qxapp.Bean.User;
 import cn.ziwei.qxapp.Fragment.FragmentChat;
-import cn.ziwei.qxapp.Fragment.FragmentHome;
 import cn.ziwei.qxapp.Fragment.FragmentMine;
+import cn.ziwei.qxapp.Fragment.HomeFragment;
 
+/**
+ * @author ziwei
+ * @version 1.0
+ * @createTime 2022.07.03  16:08:00
+ * @Description  app主页
+ */
 public class MainActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener, ViewPager.OnPageChangeListener {
 
     private ViewPager viewPager;
@@ -40,8 +39,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
         // 初始化
         initView();
-
-
+        
     }
 
     /**
@@ -61,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         // 配置 ViewPager
         viewPager.setOffscreenPageLimit(3);   // 设置最大缓存个数
         fragments = new ArrayList<Fragment>();
-        fragments.add(new FragmentHome());
+        fragments.add(new HomeFragment());
         fragments.add(new FragmentChat());
         fragments.add(new FragmentMine());
 

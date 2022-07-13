@@ -14,6 +14,7 @@ public class Post extends BmobObject {
     private String title;    // 帖子标题
     private String content;  // 帖子内容
     private String nickName; // 帖子昵称
+    private String userName; // 用户名称
 
     public User getAuthor() {
         return author;
@@ -45,5 +46,13 @@ public class Post extends BmobObject {
 
     public void setNickName(String nickName) {
         this.nickName = nickName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

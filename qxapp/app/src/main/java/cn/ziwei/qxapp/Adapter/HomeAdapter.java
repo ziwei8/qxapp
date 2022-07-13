@@ -79,6 +79,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }else {
             // ord_item的内容
             Post post = posts.get(position);
+            recyclerViewHolder.username.setText(post.getUserName());
             recyclerViewHolder.nickname.setText(post.getNickName());
             recyclerViewHolder.content.setText(post.getContent());
             recyclerViewHolder.time.setText(post.getCreatedAt());
@@ -92,6 +93,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     if (BmobUser.getCurrentUser(BmobUser.class) != null){
                         // 用户已登录，点击一个条目后，跳转到 ReceiveActivity
                         Intent in = new Intent(context, ReceiveActivity.class);
+                        // 携带id跳转
                         in.putExtra("id", posts.get(position).getObjectId());
                         context.startActivity(in);
                     }else {
@@ -136,7 +138,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
     private class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        public TextView nickname, content, time; // ord_item的TextView
+        public TextView username, nickname, content, time; // ord_item的TextView
         public TextView loading;  // foot_item的TextView
 
         /**
@@ -147,6 +149,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             if (viewtype == N_TYPE){
                 // 如果是 N_TYPE， 获取条目的nickname，content，time
+                username = itemview.findViewById(R.id.username);
                 nickname = itemview.findViewById(R.id.nickname);
                 content = itemview. findViewById(R.id.content);
                 time = itemview.findViewById(R.id.time);

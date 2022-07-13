@@ -20,10 +20,13 @@ import java.util.List;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.listener.QueryListener;
 import cn.ziwei.qxapp.Adapter.HomeAdapter;
 import cn.ziwei.qxapp.Bean.Post;
+import cn.ziwei.qxapp.Bean.User;
 import cn.ziwei.qxapp.R;
 
 /**
@@ -37,6 +40,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;    // 列表
     private SwipeRefreshLayout srlayout;  // 下拉刷新
     private TextView homePage;            // 首页顶部的TextView首页
+    private TextView loginUser, welcome;  // 当前登录的用户
 
     List<Post> posts;  // 存查询数据库的数据
 
@@ -75,6 +79,21 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        // user 当前登录的用户 加载：   xxx 欢迎您
+        BmobUser bmobUser = BmobUser.getCurrentUser(User.class);  // 获取当前用户
+        String userId = bmobUser.getObjectId();
+        BmobQuery<User> queryUser = new BmobQuery<>();
+        queryUser.getObject(userId, new QueryListener<User>() {
+            @Override
+            public void done(User user, BmobException e) {
+                if (e == null){
+                    loginUser.setText(user.getUsername());
+                }else {
+                    loginUser.setText(" ");
+                    welcome.setText(" ");
+                }
+            }
+        });
     }
 
     /**
@@ -111,6 +130,8 @@ public class HomeFragment extends Fragment {
         recyclerView = getActivity().findViewById(R.id.recyclerview);
         srlayout = getActivity().findViewById(R.id.swipe);
         homePage = getActivity().findViewById(R.id.homepage);
+        loginUser = getActivity().findViewById(R.id.loginuser);
+        welcome = getActivity().findViewById(R.id.welcome);
     }
 
 

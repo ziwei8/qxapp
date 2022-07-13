@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +22,9 @@ import cn.ziwei.qxapp.Bean.Post;
  */
 public class ReceiveActivity extends AppCompatActivity {
 
-    private TextView username, content, time;
+    private TextView username, content, time;  // 条目的作者、内容、时间
+    private ImageView backImg;                 // 返回按钮的图片
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,14 @@ public class ReceiveActivity extends AppCompatActivity {
 
         initView();
         initData();
+
+        // 监听返回
+        backImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private void initData() {
@@ -58,5 +70,6 @@ public class ReceiveActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         content = findViewById(R.id.content);
         time = findViewById(R.id.time);
+        backImg = findViewById(R.id.back);
     }
 }

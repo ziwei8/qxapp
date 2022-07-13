@@ -34,7 +34,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final int N_TYPE = 0;  // 普通样式
     private final int F_TYPE = 1;  // foot type
 
-    private int Max_num = 15;  // 最大显示数量
+    private int Max_num = 8;  // 最大显示数量
 
     private Boolean isfootview = true;  // 是否有footview
 

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="cn.ziwei.qxapp">
+
     <!-- Bmob -->
     <!-- 允许联网 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
@@ -21,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Qxapp"
         tools:targetApi="31">
-        <activity
+                <activity
             android:name=".ReceiveActivity"
             android:exported="false" />
         <activity

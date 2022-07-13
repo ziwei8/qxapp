@@ -9,14 +9,15 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="#FAF6F6"
         android:orientation="vertical"
         android:fitsSystemWindows="true">
 
         <LinearLayout
+            android:orientation="vertical"
             app:layout_scrollFlags="scroll|enterAlways"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/homepage"
                 android:layout_marginLeft="15dp"
@@ -26,6 +27,36 @@
                 android:text="首页"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <!-- 显示当前登录的用户 -->
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/loginuser"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="加载user"
+                    android:textColor="@color/red"/>
+                <TextView
+                    android:id="@+id/welcome"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="欢迎您"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <!-- 加条分割线-->
+            <View
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
         </LinearLayout>
 
     </com.google.android.material.appbar.AppBarLayout>

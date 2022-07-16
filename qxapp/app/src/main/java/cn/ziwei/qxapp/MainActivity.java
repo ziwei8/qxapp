@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         // 设置页面变化时的监听器
         viewPager.addOnPageChangeListener(this);
         viewPager.setCurrentItem(0);
+
+
     }
 
     /**

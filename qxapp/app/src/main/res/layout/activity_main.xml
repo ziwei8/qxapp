@@ -6,7 +6,9 @@
     android:gravity="center">
 
     <!-- viewPage-->
-    <androidx.viewpager.widget.ViewPager
+    <!--   替换 <androidx.viewpager.widget.ViewPager
+    起到 禁止禁止viewPage滑动的作用-->
+    <cn.ziwei.qxapp.util.NoScrullViewPage
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_weight="1"

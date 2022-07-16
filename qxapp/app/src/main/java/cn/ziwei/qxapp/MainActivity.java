@@ -15,8 +15,8 @@ import java.util.List;
 
 import cn.ziwei.qxapp.Adapter.SectionsPagerAdapter;
 import cn.ziwei.qxapp.Fragment.FragmentChat;
-import cn.ziwei.qxapp.Fragment.FragmentMine;
 import cn.ziwei.qxapp.Fragment.HomeFragment;
+import cn.ziwei.qxapp.Fragment.MineFragment;
 
 /**
  * @author ziwei
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         fragments = new ArrayList<Fragment>();
         fragments.add(new HomeFragment());
         fragments.add(new FragmentChat());
-        fragments.add(new FragmentMine());
+        fragments.add(new MineFragment());
 
         viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager(), fragments));
         // 设置页面变化时的监听器
@@ -94,9 +94,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
                 .initialise();
     }
 
+    /**
+     * 点击了哪个
+     * onTabSelected 和 onPageSelected 两个方法设置了，bottomNavigationBar点击才有用
+     * @param position
+     */
     @Override
     public void onTabSelected(int position) {
-
+        viewPager.setCurrentItem(position);
     }
 
     @Override
@@ -114,9 +119,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
     }
 
+    /**
+     * 切换到哪个page
+     * @param position
+     */
     @Override
     public void onPageSelected(int position) {
-
+        // 表示选择了哪一个page
+        bottomNavigationBar.selectTab(position);
     }
 
     @Override

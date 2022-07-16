@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,9 +55,11 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
+//    public void onActivityCreated(Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 //    public void onCreate(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+        super.onViewCreated(view, savedInstanceState);
+//        super.onActivityCreated(savedInstanceState);
 //        super.onCreate(savedInstanceState);
         // 逻辑处理
         // 初始化视图

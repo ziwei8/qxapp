@@ -61,11 +61,10 @@
         android:gravity="center">
         <Button
             android:id="@+id/login"
-
             android:layout_margin="20dp"
             android:textSize="24sp"
             android:textColor="#fff"
-            android:background="@color/cardview_dark_background"
+            android:background="@drawable/round_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="登录"/>
@@ -74,7 +73,7 @@
             android:layout_margin="20dp"
             android:textSize="24sp"
             android:textColor="#fff"
-            android:background="@color/cardview_dark_background"
+            android:background="@drawable/round_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="注册"/>
